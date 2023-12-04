@@ -1,0 +1,31 @@
+{% extends 'app_recrutement/baseA.html' %} 
+{% load static %}
+{% block content%}
+
+
+<div class="services-details-area">
+    <div class="container">
+    <div class="row">
+    <div class="col-12">
+    <div class="single-services section-padding2">
+    <div class="details-img mb-10">
+    <img src="{{ realisations.image.url }}" alt="">
+    </div>
+    <div class="details-caption">
+        <br>
+        <h3>{{ realisations.nom }}</h3>
+        <h3>{{ realisations.genre }}</h3>
+
+    <p>{{ realisations.description }}</p>
+ 
+    <h3>Nom de l'architecte</h3>
+    <p>{{ realisations.architect.username }}</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+{% endblock content %}

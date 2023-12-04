@@ -1,0 +1,168 @@
+{% extends 'app_recrutement/baseA.html' %} 
+{% load static %}
+{% block content%}
+
+<div class="slider-area ">
+    <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
+    <div class="container">
+    <div class="row">
+    <div class="col-xl-12">
+    <div class="hero-cap pt-100">
+    <h2>Projects des architectes</h2>
+    <h3>Trouvez l’inspiration avec les projets de nos professionnels</h3>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<section class="project-area  section-padding30">
+    <div class="container">
+    <div class="project-heading mb-35">
+    <div class="row align-items-end">
+    <div class="col-lg-6">
+    
+     <div class="section-tittle section-tittle3">
+    <div class="front-text">
+    <h2 class="">Les projets de nos Concepteurs</h2>
+    </div>
+    <span class="back-text">Gellary</span>
+    </div>
+    </div>
+    <div class="col-lg-6">
+    <div class="properties__button">
+    
+    <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    
+    </div>
+    </nav>
+    
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-12">
+    
+    <div class="tab-content active" id="nav-tabContent">
+    
+    <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div class="project-caption">
+    <div class="row">
+    {% for realisations in realisations %}
+    <div class="col-lg-4 col-md-6">
+    <div class="single-project mb-30">
+    <div class="project-img">
+    <img src="{{ realisations.image.url }}" alt="">
+    </div>
+    <div class="project-cap">
+    <a href="{% url 'detailrealisaion' realisations.id %}" class="plus-btn"><i class="ti-plus"></i></a>
+    <h4><a href="project_details.html">{{ realisations.nom }}</a></h4>
+    <h4><a href="project_details.html">{{ realisations.genre }}</a></h4>
+    </div>
+    </div>
+   
+
+    </div>
+  
+    
+    {% endfor %}
+   
+   
+     
+    
+   
+    
+   
+   
+   
+    </div>
+    </div>
+    
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <div class="project-caption">
+    <div class="row">
+    <div class="col-lg-4 col-md-6">
+    <div class="single-project mb-30">
+    <div class="project-img">
+    <img src="assets/img/gallery/project3.png" alt="">
+    </div>
+    <div class="project-cap">
+    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>
+    <h4><a href="project_details.html">safi3</a></h4>
+    <h4><a href="project_details.html">Factory</a></h4>
+    </div>
+    </div>
+    </div>
+   
+   
+   
+   
+    
+     
+    </div>
+    </div>
+    
+    <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-last-tab">
+    <div class="project-caption">
+    <div class="row">
+    <div class="col-lg-4 col-md-6">
+    <div class="single-project mb-30">
+    <div class="project-img">
+    <img src="assets/img/gallery/project1.png" alt="">
+    </div>
+    <div class="project-cap">
+    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>
+    <h4><a href="project_details.html">safi4</a></h4>
+    <h4><a href="project_details.html">safi4</a></h4>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+   
+    
+    </div>
+    </div>
+    </div>
+    
+    <div class="tab-pane fade" id="nav-techno" role="tabpanel" aria-labelledby="nav-technology">
+    <div class="project-caption">
+    <div class="row">
+    <div class="col-lg-4 col-md-6">
+    <div class="single-project mb-30">
+    <div class="project-img">
+    <img src="assets/img/gallery/project1.png" alt="">
+    </div>
+    <div class="project-cap">
+    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>
+    <h4><a href="project_details.html">safi5</a></h4>
+    <h4><a href="project_details.html">safi</a></h4>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    
+    
+    
+     </div>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    </section>
+
+
+
+
+
+
+
+{% endblock content %}

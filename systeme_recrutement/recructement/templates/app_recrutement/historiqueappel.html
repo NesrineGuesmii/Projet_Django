@@ -1,0 +1,74 @@
+{% extends 'app_recrutement/baseclient.html' %} 
+
+{% block content%}
+
+
+
+
+
+
+<div class="card  card-primary" >
+    <div class="card-header">
+        <h3  style="text-align: center;">Historique Appel offre</h3>
+      </div>
+      <br> <br>
+      <section class="content">
+        
+           
+       </section>
+      <div class="card-body">
+        <table class="table table-bordered table-striped dataTable text-sm">
+          <thead>
+            <tr>
+              
+              <tr>
+              
+                <th>Nom du projet</th>
+                <th>Achitecte</th>
+                <th>Résultat</th>
+                
+                
+                
+            
+
+              </tr>
+            </thead>
+            <tbody>
+              
+                {% for offres in offres %}
+                <tr>
+                  <td>{{ offres.demade.nom }}</td>
+                  <td>{{ offres.architect}}</td>
+                
+                  <td> 
+                    {% if  offres.decisioncli == 100 %}
+                    <span class="badge bg-success">Accepter</span>
+                    
+                    {% elif offres.decisioncli == 100 %}
+                    
+                    <span class="badge bg-danger">Refuser</span>
+                    {% else %}
+
+                    <span class="badge bg-danger">Refuser</span>
+                    
+                     {% endif %}
+                
+                    
+                
+                
+                
+                 
+                  
+                <tr>
+            {% endfor %} 
+          </tbody>
+        </table>
+      </div>
+
+
+
+</div>
+
+
+
+{% endblock content %}

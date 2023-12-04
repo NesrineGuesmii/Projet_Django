@@ -1,0 +1,17 @@
+{% extends 'app_recrutement/basearchitecte.html' %} 
+{% load bootstrap5 %}
+{% block content%}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   
+      {% bootstrap_form update_etapes show_help=False %}
+<br>
+<br>
+{% buttons %}
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+{% endbuttons %}
+    </form>
+  
+
+  {% endblock content %}

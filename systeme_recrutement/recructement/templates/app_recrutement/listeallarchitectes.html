@@ -1,0 +1,90 @@
+
+{% extends 'app_recrutement/baseadmin.html' %} 
+{% block content%}
+
+
+
+<div class="card  card-info" >
+    <div class="card-header">
+        <h3  style="text-align: center;">Gérer les architectes</h3>
+      </div>
+      <br> <br>
+      <section class="content">
+        <div class="container">
+    
+    
+           <div class="row">
+    
+               <div class="col-lg-2 col-6">
+                   <!-- small box -->
+                   <div class="small-box bg-info">
+                     <div class="inner">
+                       <h3>{{nbres_architecte}}</h3>
+       
+                       <p>Architectes</p>
+                     </div>
+                     <div class="icon">
+                       <i class="ion ion-User"></i>
+                     </div>
+                     
+                   </div>
+                 </div>
+                 <!-- ./col -->
+                
+    
+    
+                 
+           </div>
+                 
+           
+       </section>
+      <div class="card-body">
+        <table class="table table-bordered table-striped dataTable text-sm">
+          <thead>
+            <tr>
+              
+              <tr>
+              
+                <th>photo</th>
+                <th>nom</th>
+                <th>email</th>
+                <th>numéro</th>
+                <th>CV</th>
+                <th></th>
+                
+                
+                
+              </tr>
+            </thead>
+            <tbody>
+
+           
+              
+                  {% for architecte in architecte %}
+                   <tr>
+
+                  <td><img src="{{ architecte.Photo.url }}" class="img" width="75px" alt="..."></td>
+                  <td>{{ architecte.profile.username }}</td>  
+                  <td>{{architecte.profile.email}}</td>
+                  <td>{{architecte.numero}}</td>
+                  <td><a href="{{ architecte.cv_file.url }}" target="_blank">Voir le CV</a></td>               
+                  <td><a href="{% url 'Supprimerarchitecte' architecte.profile.id %}"> <button type="button" class="btn btn-danger">Banir</button></a>
+        
+                    
+                
+                </td> 
+                <tr>
+                  {% endfor %} 
+               
+          </tbody>
+        </table>
+      </div>
+
+
+
+</div>
+
+
+{% endblock content %}
+
+

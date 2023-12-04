@@ -1,0 +1,277 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="zxx">
+
+<!-- Mirrored from preview.colorlib.com/theme/constructioncompany/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Jun 2023 19:10:12 GMT -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>l'art de batir</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="site.html">
+<link rel="stylesheet" href="{% static 'frontend/assets/css/style.css' %}">
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'frontend/assets/img/favicon.ico' %}">
+
+
+<link rel="stylesheet" href="{% static 'frontend/assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'frontend/assets/css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'frontend/assets/css/slicknav.css' %}">
+<link rel="stylesheet"  href="{% static 'frontend/assets/css/animate.min.css' %}">
+<link rel="stylesheet" href="{% static 'frontend/assets/css/magnific-popup.css' %}">
+<link rel="stylesheet" href="{% static 'frontend/assets/css/fontawesome-all.min.css' %}">
+<link rel="stylesheet"href="{% static 'frontend/assets/css/themify-icons.css' %}">
+<link rel="stylesheet"  href="{% static 'frontend/assets/css/slick.css' %}">
+<link rel="stylesheet"  href="{% static 'frontend/assets/css/nice-select.css' %}">
+<link rel="stylesheet" href="{% static 'frontend/assets/css/style.css' %}">
+<script nonce="002ac799-e85a-4c81-9963-4e69d8998452">(function(w,d){!function(dK,dL,dM,dN){dK[dM]=dK[dM]||{};dK[dM].executed=[];dK.zaraz={deferred:[],listeners:[]};dK.zaraz.q=[];dK.zaraz._f=function(dO){return function(){var dP=Array.prototype.slice.call(arguments);dK.zaraz.q.push({m:dO,a:dP})}};for(const dQ of["track","set","debug"])dK.zaraz[dQ]=dK.zaraz._f(dQ);dK.zaraz.init=()=>{var dR=dL.getElementsByTagName(dN)[0],dS=dL.createElement(dN),dT=dL.getElementsByTagName("title")[0];dT&&(dK[dM].t=dL.getElementsByTagName("title")[0].text);dK[dM].x=Math.random();dK[dM].w=dK.screen.width;dK[dM].h=dK.screen.height;dK[dM].j=dK.innerHeight;dK[dM].e=dK.innerWidth;dK[dM].l=dK.location.href;dK[dM].r=dL.referrer;dK[dM].k=dK.screen.colorDepth;dK[dM].n=dL.characterSet;dK[dM].o=(new Date).getTimezoneOffset();if(dK.dataLayer)for(const dX of Object.entries(Object.entries(dataLayer).reduce(((dY,dZ)=>({...dY[1],...dZ[1]})),{})))zaraz.set(dX[0],dX[1],{scope:"page"});dK[dM].q=[];for(;dK.zaraz.q.length;){const d_=dK.zaraz.q.shift();dK[dM].q.push(d_)}dS.defer=!0;for(const ea of[localStorage,sessionStorage])Object.keys(ea||{}).filter((ec=>ec.startsWith("_zaraz_"))).forEach((eb=>{try{dK[dM]["z_"+eb.slice(7)]=JSON.parse(ea.getItem(eb))}catch{dK[dM]["z_"+eb.slice(7)]=ea.getItem(eb)}}));dS.referrerPolicy="origin";dS.src="../../cdn-cgi/zaraz/sd0d9.js?z="+btoa(encodeURIComponent(JSON.stringify(dK[dM])));dR.parentNode.insertBefore(dS,dR)};["complete","interactive"].includes(dL.readyState)?zaraz.init():dK.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
+<body>
+
+<div id="preloader-active">
+<div class="preloader d-flex align-items-center justify-content-center">
+<div class="preloader-inner position-relative">
+<div class="preloader-circle"></div>
+<div class="preloader-img pere-text">
+    
+<img src="{% static 'frontend/assets/img/logo/loder-logo.png' %}" alt="">
+</div>
+</div>
+</div>
+</div>
+
+<header>
+
+<div class="header-area header-transparent">
+<div class="main-header ">
+<div class="header-top d-none d-lg-block">
+<div class="container-fluid">
+<div class="col-xl-12">
+<div class="row d-flex justify-content-between align-items-center">
+
+
+</div>
+</div>
+</div>
+</div>
+<div class="header-bottom  header-sticky">
+<div class="container-fluid">
+<div class="row align-items-center">
+
+<div class="col-xl-2 col-lg-2 col-md-1">
+<div class="logo">
+    
+<a href="{% url 'index' %}" class="big-logo"><img src="{% static 'frontend/assets/img/logo/logo.png' %}" alt=""></a>
+
+<a href="{% url 'index' %}" class="small-logo"><img src="{% static 'frontend/assets/img/logo/loder-logo.png' %}" alt=""></a>
+</div>
+</div>
+<div class="col-xl-8 col-lg-8 col-md-8">
+
+ <div class="main-menu f-right d-none d-lg-block">
+<nav>
+<ul id="navigation">
+<li><a href="{% url 'index' %}">Home</a></li>
+<li><a href="{% url 'appelofre' %}">Appels d'offres</a></li>
+<li><a  href="{% url 'allrealisaion' %}">Réalisations</a></li>
+<li>
+    
+    
+    {% if user.is_authenticated %}
+    <a href="{% url 'pageajoutdemande' %}">Trouver un architecte</a>   
+                
+    {% else %}
+    <a href="{% url 'signin' %}">Trouver un architecte</a>     
+  {% endif %}
+    
+    
+    
+    
+    
+    
+
+{% if user.is_authenticated %}
+<li><a  href="{% url 'tableaubord' %}"><button class="btn"> tableau de bord</button></a></li>
+{% endif %}
+
+</ul>
+</nav>
+</div>
+</div>
+
+
+
+{% if user.is_authenticated %}
+
+
+
+
+<div class="col-xl-2 col-lg-2 col-md-3">
+
+   
+    <div class="header-right-btn f-right d-none d-lg-block">
+    <a href="{% url 'Deconnexion' %}" class="btn">Deconnexion</a>
+    </div>
+    </div>
+
+
+    
+    {% else %}
+    <div class="col-xl-2 col-lg-2 col-md-3">
+        <div class="header-right-btn f-right d-none d-lg-block">
+        <a href="{% url 'signin' %}" class="btn">connexion</a>
+        </div>
+        </div>
+    {% endif %}
+
+</div>
+
+<div class="col-12">
+<div class="mobile_menu d-block d-lg-none"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</header>
+<main>
+
+    {% block content%}
+    {% endblock content %}
+      
+
+
+</main>
+<footer>
+
+<div class="footer-main">
+<div class="footer-area footer-padding">
+<div class="container">
+<div class="row  justify-content-between">
+<div class="col-lg-4 col-md-4 col-sm-8">
+<div class="single-footer-caption mb-30">
+    
+<div class="footer-logo">
+<a href="index-2.html"><img src="{% static 'frontend/assets/img/logo/logo2_footer.png' %}" alt=""></a>
+</div>
+<div class="footer-tittle">
+<div class="footer-pera">
+<p class="info1">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-2 col-md-4 col-sm-5">
+<div class="single-footer-caption mb-50">
+<div class="footer-tittle">
+<h4>Quick Links</h4>
+<ul>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Projects</a></li>
+<li><a href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-7">
+<div class="single-footer-caption mb-50">
+<div class="footer-tittle">
+<h4>Contact</h4>
+<div class="footer-pera">
+<p class="info1">198 West 21th Street, Suite 721 New York,NY 10010</p>
+</div>
+<ul>
+<li><a href="#">Phone: +95 (0) 123 456 789</a></li>
+<li><a href="#">Cell: +95 (0) 123 456 789</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-8">
+<div class="single-footer-caption mb-50">
+
+<div class="footer-form">
+<div id="mc_embed_signup">
+<form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
+<input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
+<div class="form-icon">
+<button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+SIGN UP
+</button>
+</div>
+<div class="mt-10 info"></div>
+</form>
+</div>
+</div>
+
+<div class="map-footer">
+<img src="{% static 'frontend/assets/img/gallery/map-footer.png' %}" alt="">
+</div>
+</div>
+</div>
+</div>
+
+<div class="row align-items-center">
+<div class="col-xl-12 ">
+<div class="footer-copy-right">
+<p>
+Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</footer>
+
+
+<script src="{% static 'frontend/assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+
+<script src="{% static 'frontend/assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'frontend/assets/js/popper.min.js' %}"></script>
+<script src="{% static 'frontend/assets/js/bootstrap.min.js' %}"></script>
+
+<script src="{% static 'frontend/assets/js/jquery.slicknav.min.js' %}"></script>
+
+<script src="{% static 'frontend/assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'frontend/assets/js/slick.min.js' %}"></script>
+
+<script src="{% static 'frontend/assets/js/gijgo.min.js' %}"></script>
+
+<script src="{% static 'frontend/assets/js/wow.min.js' %}"></script>
+<script src="{% static 'frontend/assets/js/animated.headline.js' %}"></script>
+<script src="{% static 'frontend/assets/js/jquery.magnific-popup.js' %}"></script>
+
+<script src="{% static 'frontend/assets/js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'frontend/assets/js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'frontend/js/jquery.sticky.js' %}"></script>
+
+<script src="../../../cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="{% static 'frontend/assets/js/jquery.counterup.min.js' %}"></script>
+
+<script src="{% static 'frontend/assets/js/contact.js' %}"></script>
+<script src="{% static 'frontend/assets/js/jquery.form.js' %}"></script>
+<script src="{% static 'frontend/assets/js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'frontend/assets/js/mail-script.js' %}"></script>
+<script src="{% static 'frontend/assets/js/jquery.ajaxchimp.min.js' %}"></script>
+
+<script src="{% static 'frontend/assets/js/plugins.js' %}"></script>
+<script src="{% static 'frontend/assets/js/main.js' %}"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v52afc6f149f6479b8c77fa569edb01181681764108816" integrity="sha512-jGCTpDpBAYDGNYR5ztKt4BQPGef1P0giN6ZGVUi835kFF88FOmmn8jBQWNgrNd8g/Yu421NdgWhwQoaOPFflDw==" data-cf-beacon='{"rayId":"7d5c2596798f38c4","version":"2023.4.0","b":1,"token":"cd0b4b3a733644fc843ef0b185f98241","si":100}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from preview.colorlib.com/theme/constructioncompany/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Jun 2023 19:10:12 GMT -->
+</html>

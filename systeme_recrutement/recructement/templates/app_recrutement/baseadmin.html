@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr-CI">
+    
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title style="">Administration</title>
+
+</form>
+  
+
+  <!-- Theme style -->
+  
+<link rel="stylesheet" href="{% static 'backend/assets/plugins/fontawesome-free/css/all.min.css' %}">
+<link rel="stylesheet" href="{% static 'backend/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+<link rel="stylesheet" href="{% static 'backend/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+<link rel="stylesheet" href="{% static 'backend/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css'%}">
+<link rel="stylesheet" href="{% static 'backend/assets/dist/css/adminlte.min.css'%}">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Google Font: Source Sans Pro -->
+  
+  <style media="screen">
+    .btn-theme{
+      font-weight: 900;
+      font-size: 9pt;
+      /* color: #444; */
+      border-radius: 2px !important;
+    }
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+      color: #fff;
+      background-color: #28a745 !important;
+    }
+  </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed" >
+  
+  <div class="wrapper">
+
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="{% url 'index' %}" class="nav-link">Acceuil</a>
+          </li>
+         
+          
+        </ul>
+      </nav>
+    
+
+
+
+
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        
+        <div class="sidebar">
+          <a href="index3.html" class="brand-link">
+            <span class="brand-text font-weight-light">Administration</span>
+          </a>
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel mt-3 pb-3 d-flex">
+            <div class="image">
+              <img src="{% static 'backend/assets/dist/img/avatar.png'%}" class="img-circle elevation-0" alt="User Image">
+            </div>
+            <div class="info" style="text-align: center;">
+              <a href="#" class="d-block text-bold text-uppercase">Administrateur</a>
+            </div>
+          </div>
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              
+            
+             
+                  <li class="nav-item">
+                    <a href="{% url 'dashadmin' %}" class="nav-link">
+                      
+                      <p>
+                        Tableau de bord
+                       
+                      </p>
+                    </a>
+                  </li>
+
+             
+            
+
+
+
+                  <li class="nav-item">
+                    <a href="{% url 'gererclient' %}" class="nav-link">
+                      <i class="nav-icon fas fa-user"></i>
+                      <p>Gérer clients</p>
+                    </a>
+                  </li>
+              
+                  
+                
+              
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-user"></i>
+                  <p>
+                 Gérer Architectes
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+
+                  <li class="nav-item">
+                    <a href="{% url 'gererarchitecte' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Nouveau architectes</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% url 'allarchitecte' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Liste des architectes</p>
+                    </a>
+                  </li>
+                 
+                </ul>
+              </li>
+              
+
+
+
+
+
+             <!---
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon far fa-envelope"></i>
+                  <p>
+                  Historique
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+
+                  <li class="nav-item">
+                    <a href="{% url 'statutprojetclient' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p> Avancement de projet</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% url 'demandeindividuel' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>liste de projet</p>
+                    </a>
+                  </li>
+                 
+                </ul>
+              </li>-->
+              
+             
+              <li class="nav-item">
+                <a   href="{% url 'index' %}"  class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Deconnexion</p>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
+     
+
+      <div  class="content-wrapper">
+             
+{% block content%}
+{% endblock content %}
+
+       
+    
+
+
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Main Footer -->
+      <footer class="main-footer text-sm bg-dark">
+        
+       
+    </div>
+    <!-- ./wrapper -->
+
+    
+
+    <!-- REQUIRED SCRIPTS -->
+    
+    <!-- jQuery -->
+    <script src="{% static 'backend/assets/plugins/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'backend/assets/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- overlayScrollbars -->
+    <script src="{% static 'backend/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+    <!-- DataTables -->
+    <script src="{% static 'backend/assets/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'backend/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <!-- REQUIRED SCRIPTS -->
+    <script src="{% static 'backend/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'backend/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+    
+    <script type="text/javascript">
+      $(function(){
+        let dtable = $('.dataTable').DataTable({
+          "language": {
+            "url": "backend/assets/plugins/datatables/French.json"
+          },
+          rowReorder: false,
+        });
+
+        dtable.on( 'draw', function () {
+          console.log("DataTables re-drawn");
+        })
+      })
+    </script>
+
+    
+    <script src="{% static 'backend/assets/plugins/bootbox/bootbox.all.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'backend/assets/dist/js/adminlte.min.js' %}"></script>
+    <!-- bootbox code -->
+    <script src="{% static 'backend/assets/plugins/bootbox/bootbox.all.min.js' %}"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        // Append item to the editing form and show the ready pre-filled form
+        $('.edit-item').click(function(){
+          let a = $(this)
+          $('form.form-edit').attr('action', a.data('href'));
+          let fields = a.data('fields').split(',')
+          for(let f in fields) {
+            $('form.form-edit [name='+fields[f]+']').val(a.data('item')[fields[f]])
+          }
+          $('form.form-edit [name=password]').val('')
+          if(a.hasClass('has-checkboxes')) {
+            let chbxes = a.data('checkboxes').split(',')
+            for(let chbx of chbxes) {
+              $('form.form-edit [name='+chbx+']')[0].checked = ((
+                a.data('item')[chbx] != false
+                && a.data('item')[chbx] != 0
+                && a.data('item')[chbx] != "0"
+                && a.data('item')[chbx] != ""
+                && a.data('item')[chbx] != null
+              ) ? true : false)
+            }
+          }
+          // return false;
+        })
+
+        // Show application alerts as notification Toasts
+        @if (session('success'))
+          $(document).Toasts('create', {
+            class: 'bg-success',
+            title: 'Information',
+            subtitle: '&Agrave; l\'instant',
+            position: 'topRight',
+            body: "{!! str_replace('"', '\\"', session('success')) !!}"
+          })
+        @endif
+        @if (session('error'))
+          $(document).Toasts('create', {
+            class: 'bg-maroon',
+            title: 'Erreur',
+            subtitle: '&Agrave; l\'instant',
+            position: 'bottomRight',
+            body: "{!! str_replace('"', '\\"', session('error')) !!}"
+          })
+        @endif
+
+        // Make action buttons/links to submit form post requests
+        $('.hidden-form-handler').click(function(){
+          var _me = $(this)
+          if($(this).hasClass('confirm')) {
+            bootbox.confirm({
+              title: "Attention",
+              message: $(this).data('confirm'),
+              locale: 'fr',
+              buttons: {
+                cancel: {
+                  label: '<i class="fa fa-times"></i> Annuler',
+                  className: 'btn-default'
+                },
+                confirm: {
+                  label: '<i class="fa fa-check"></i> Oui',
+                  className: 'btn-danger'
+                }
+              },
+              callback: function (result) {
+                if(result) {
+                  if(_me.data('href')) {
+                    $('form.the-hidden-form').attr('action', _me.data('href'))
+                    $('form.the-hidden-form')[0].submit()
+                  } else {
+                    $('form.the-hidden-form').attr('action', _me.attr('href'))
+                    $('form.the-hidden-form')[0].submit()
+                  }
+                }
+              }
+            });
+          } else {
+            if($(this).data('href')) {
+              $('form.the-hidden-form').attr('action', $(this).data('href'))
+              $('form.the-hidden-form')[0].submit()
+            } else {
+              $('form.the-hidden-form').attr('action', $(this).attr('href'))
+              $('form.the-hidden-form')[0].submit()
+            }
+          }
+
+          return false;
+        })
+      })
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </body>
+  </html>

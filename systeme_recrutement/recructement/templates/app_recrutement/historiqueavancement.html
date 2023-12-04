@@ -1,0 +1,139 @@
+{% extends 'app_recrutement/baseclient.html' %} 
+
+{% block content%}
+
+
+
+
+
+
+<div class="card  card-primary" >
+    <div class="card-header">
+        <h3  style="text-align: center;">Avancement de  mes projets</h3>
+      </div>
+      <br> <br>
+      <section class="content">
+        <div class="container">
+    
+    
+           <div class="row">
+    
+               <div class="col-lg-2 col-6">
+                   <!-- small box -->
+                   <div class="small-box bg-info">
+                     <div class="inner">
+                       <h3>{{ nbres_demande }}</h3>
+       
+                       <p>projets Cours</p>
+                     </div>s
+                     <div class="icon">
+                       <i class="ion ion-bag"></i>
+                     </div>
+                     
+                   </div>
+                 </div>
+                 <!-- ./col -->
+                 <div class="col-lg-2 col-6">
+                   <!-- small box -->
+                   <div class="small-box bg-success">
+                     <div class="inner">
+                       <h3>2</h3>
+       
+                       <p>Terminer</p>
+                     </div>
+                     <div class="icon">
+                       <i class="ion ion-stats-bars"></i>
+                     </div>
+                    
+                   </div>
+                 </div>
+    
+    
+                 <div class="col-lg-2 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                      <div class="inner">
+                        <h3>2</h3>
+        
+                        <p> Suspendu</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                      </div>
+                      
+                    </div>
+                  </div>
+                 <!-- ./col -->
+                
+                 <!-- ./col -->
+                 
+                 </div>
+           </div>
+                 
+           
+       </section>
+      <div class="card-body">
+        <table class="table table-bordered table-striped dataTable text-sm">
+          <thead>
+            <tr>
+              
+              <tr>
+              
+                <th>Nom du projet</th>
+                <th>Achitecte</th>
+                <th>Date debut</th>
+                <th>Date fin</th>
+                <th> Statut</th>
+                <th></th>
+                
+            
+
+              </tr>
+            </thead>
+            <tbody>
+              
+                {% for projetcli in projetcli %}
+                <tr>
+                  <td>{{ projetcli.demande.nom }}</td>
+                  <td>{{ projetcli.architecte }}</td>
+                  <td>{{ projetcli.date_debut }}</td>
+
+                  <td>{{ projetcli.date_fin }}</td>
+                  
+                  <td> 
+                    {% if projetcli.statut == "Livré" %}
+                    <span class="badge bg-success">Livré</span>
+                    
+                    {% elif projetcli.statut == "En cours" %}
+                    <span class="badge bg-primary">En cours</span>
+                    {% elif projetcli.statut == "nouveau projet" %}
+                    <span class="badge bg-secondary">Nouveau projet</span>
+                    {% else %}
+
+                    <span class="badge bg-danger">Suspendu</span>
+                    
+                     {% endif %}
+                
+                     <td>
+                    
+                      <a href="{% url 'etapespcli' projetcli.id %}"> <button type="button" class="btn btn-success">détails</button></a>
+                    
+                    </td>
+                
+                
+                </td>
+                 
+                  
+                <tr>
+            {% endfor %} 
+          </tbody>
+        </table>
+      </div>
+
+
+
+</div>
+
+
+
+{% endblock content %}

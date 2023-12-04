@@ -1,0 +1,101 @@
+{% extends 'app_recrutement/baseclient.html' %} 
+
+{% block content%}
+
+
+
+
+
+
+<div class="card  card-success" >
+    <div class="card-header">
+        <h3  style="text-align: center;">Vos appels d'offres </h3>
+      </div>
+      <br> <br>
+      <section class="content">
+        <div class="container">
+    
+    
+           <div class="row">
+    
+               <div class="col-lg-2 col-6">
+                   <!-- small box -->
+                   <div class="small-box bg-info">
+                     <div class="inner">
+                       <h3>{{ nbres_demande }}</h3>
+       
+                       <p>Nombre de demandes</p>
+                     </div>
+                     <div class="icon">
+                       <i class="ion ion-bag"></i>
+                     </div>
+                     
+                   </div>
+                 </div>
+                 <!-- ./col -->
+                
+    
+    
+                 
+           </div>
+                 
+           
+       </section>
+      <div class="card-body">
+        <table class="table table-bordered table-striped dataTable text-sm">
+          <thead>
+            <tr>
+              
+              <tr>
+              
+                <th>Appel d'offre</th>
+                <th>genre</th>
+                <th> description</th>
+                <th> Date de publication</th>
+                <th>Cahier de charge</th>
+                
+                
+              </tr>
+            </thead>
+            <tbody>
+
+           
+              
+                  {% for demandes in demandes %}
+                   <tr>
+                     <td>{{ demandes.nom }}</td>
+                      <td>{{ demandes.genre}}</td>
+                      <td> {{ demandes.description}}</td>
+                      <td> {{ demandes.date_publication}}</td>
+                      <td>  <a href="{{ demandes.cahier_charge.url }}" target="_blank">Voir le cahier de charges</a></td>
+                     
+                        <td>
+
+                        <a   href="{% url 'Updateappel' demandes.id %}">
+                        <button type="button" class="btn btn-success">Modifier</button>
+                        </a>
+                        <a href="{% url 'SupprimerDemande' demandes.id %}"> <button type="button" class="btn btn-danger">Supprimer</button>
+                        </td>
+                      </a>
+                  
+                
+
+                  
+                  </td>
+                    
+                  
+                <tr>
+                  {% endfor %} 
+               
+          </tbody>
+        </table>
+      </div>
+
+
+
+</div>
+
+
+
+
+{% endblock content %}

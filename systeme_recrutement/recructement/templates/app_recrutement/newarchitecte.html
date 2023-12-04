@@ -1,0 +1,38 @@
+{% extends 'app_recrutement/basenewarchitecte.html' %} 
+{% load bootstrap5 %}
+{% block content%}
+
+<div class="container px-6 mx-auto grid">
+
+    <h2
+    class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+  >
+   Bienvenue commencez par remplir votre profil
+  </h2>
+    <p> une fois votre profil bien rempli notre équipe vérifiera vos informations afin de voir votre crédibilité si vos informations sont correctes vous pourrez postuler à des appels d'offre et gérer des projets</p>
+
+    
+<br> <br>
+
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+       
+          {% bootstrap_form form show_help=False %}
+    <br>
+    <br>
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+    {% endbuttons %}
+        </form>
+      
+
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

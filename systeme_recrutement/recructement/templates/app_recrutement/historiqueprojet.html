@@ -1,0 +1,199 @@
+{% extends 'app_recrutement/baseclient.html' %} 
+
+{% block content%}
+
+
+
+
+
+
+<div class="card  card-success" >
+    <div class="card-header">
+        <h3  style="text-align: center;">Résulats des appels d'offres </h3>
+      </div>
+      <br> <br>
+      <section class="content">
+        <div class="container">
+    
+    
+           <div class="row">
+    
+               <div class="col-lg-2 col-6">
+                   <!-- small box -->
+                   <div class="small-box bg-info">
+                     <div class="inner">
+                       <h3>{{ nbres_demande }}</h3>
+       
+                       <p>Nombre de demandes</p>
+                     </div>
+                     <div class="icon">
+                       <i class="ion ion-bag"></i>
+                     </div>
+                     
+                   </div>
+                 </div>
+                 <!-- ./col -->
+                 <div class="col-lg-2 col-6">
+                   <!-- small box -->
+                   <div class="small-box bg-success">
+                     <div class="inner">
+                       <h3>2</h3>
+       
+                       <p>acceptation</p>
+                     </div>
+                     <div class="icon">
+                       <i class="ion ion-stats-bars"></i>
+                     </div>
+                    
+                   </div>
+                 </div>
+    
+    
+                 <div class="col-lg-2 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                      <div class="inner">
+                        <h3>2</h3>
+        
+                        <p> refus</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                      </div>
+                      
+                    </div>
+                  </div>
+                 <!-- ./col -->
+                
+                 <!-- ./col -->
+                 
+                 </div>
+           </div>
+                 
+           
+       </section>
+
+       {% for demande in alldem%}
+       
+           <div class="card-body">
+         <form method="post" action="{% url 'AcepterdemandeCLI' demande.id %}">
+          {% csrf_token %}
+        <table class="table table-bordered table-striped dataTable text-sm">
+          <thead>
+            <tr>
+              
+              <tr>
+              
+                <th>Appel d'offre</th>
+                <th>Architecte</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                
+              </tr>
+            </thead>
+            <tbody>
+
+           
+              
+              {% for candidature in demandes %}
+                 
+                   <tr>
+                     <td>{{ candidature.demade.nom }}</td>
+                      <td>{{ candidature.architect }}</td>
+                      <td>
+                      
+ 
+                        
+                        
+                        
+                        
+                        
+                        <a   href="{% url 'desArchitecte' candidature.architect.id %}">voir</a></td>
+                 
+                        <td>
+        
+
+                          <button type="submit" name="candidature_id" value="{{ candidature.id }}">Accepter</button>
+                       
+
+
+                          <a   href="{% url 'Refuserdemande' candidature.id %}">
+                            <button type="button" class="btn btn-danger">Refuser</button>
+                            </a>
+                        </td>
+                  
+                  
+                        <td>
+
+                        
+                   
+                   
+
+                  
+                  </td>
+                    
+                  
+                <tr>
+                  
+                  {% endfor %} 
+            
+          </tbody>
+        </table>
+      </form>
+      
+      {% endfor %}
+      </div>
+
+
+
+</div>
+
+<!--<div class="container">
+
+  {% for demande in alldem%}
+  <form method="post" action="{% url 'AcepterdemandeCLI' demande.id %}">
+   {% csrf_token %}
+
+   
+   {% for candidature in demandes %}
+
+
+
+
+
+     <div>
+      <span>{{ candidature.demade.nom }}</span>
+       <span>{{ candidature.architect }}</span>
+       <span><a href="{% url 'desArchitecte' candidature.architect.id %}">voir</a></span>
+       <button type="submit" name="candidature_id" value="{{ candidature.id }}">Accepter</button>
+       <a   href="{% url 'Refuserdemande' candidature.id %}">
+        <button type="button" class="btn btn-danger">Refuser</button>
+        </a>
+     </div>
+   {% endfor %}
+ </form>
+ {% endfor %}
+
+</div>-->
+
+
+<script>
+  // Capturez la valeur de la variable dans le template
+  var myVariable = "valeur";
+
+  // Envoyez la valeur à la vue via une requête AJAX
+  $.ajax({
+    url: "/my-view/",
+    type: "POST",
+    data: {
+      myVariable: myVariable
+    },
+    success: function(response) {
+      // Traitez la réponse de la vue
+      console.log(response);
+    }
+  });
+</script>
+
+{% endblock content %}

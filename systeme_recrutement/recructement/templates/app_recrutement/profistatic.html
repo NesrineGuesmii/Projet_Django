@@ -1,0 +1,36 @@
+{% extends 'app_recrutement/basearchitecte.html' %} 
+{% load bootstrap5 %}
+{% block content%}
+
+
+
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ architecte.Photo.url }}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{architecte.profile.username}}</h5>
+          <p class="card-text">{{architecte.description}}</p>
+          <p class="card-text">{{architecte.numero}}</p>
+        </div>
+
+
+        <a   href="{% url 'Updateprofil' architecte.id %}">
+        <button type="" class="btn btn-primary">Modifier</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+ 
+
+
+
+
+
+  
+
+  {% endblock content %}

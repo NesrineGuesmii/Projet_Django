@@ -1,0 +1,70 @@
+{% extends 'app_recrutement/baseclient.html' %} 
+
+{% block content%}
+
+
+
+
+
+
+<div class="card  card-primary" >
+    <div class="card-header">
+        <h3  style="text-align: center;">Etapes de  mes projets</h3>
+      </div>
+      <br> <br>
+      
+      <div class="card-body">
+        <table class="table table-bordered table-striped dataTable text-sm">
+          <thead>
+            <tr>
+              
+              <tr>
+
+                <th >Etapes</th>
+              <th>sous etapes</th>
+              <th > Date début</th>
+              <th> Date fin</th>
+              
+              <th >rapport</th>
+            
+                
+            
+
+              </tr>
+            </thead>
+            <tbody>
+              
+                {% for  etape in  etap %}
+                <tr>
+                  <td>{{  etape.Étape }}</td>
+                  <td>{{  etape.sous_etape}}</td>
+                  <td>{{  etape.Date_debut}}</td>
+
+                  <td>{{  etape.Date_fin}}</td>
+                  
+                  <td> 
+                    
+                
+                    <a href="{{  etape.Rapport.url }}" target="_blank">Voir le rapport</a>
+                    
+                     
+                    
+                    </td>
+                
+                
+                </td>
+                 
+                  
+                <tr>
+            {% endfor %} 
+          </tbody>
+        </table>
+      </div>
+
+
+
+</div>
+
+
+
+{% endblock content %}

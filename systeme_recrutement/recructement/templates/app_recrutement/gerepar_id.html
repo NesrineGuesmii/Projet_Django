@@ -1,0 +1,52 @@
+{% extends 'app_recrutement/basearchitecte.html' %} 
+{% load bootstrap5 %}
+{% block content%}
+
+<div class="container px-6 mx-auto grid">
+    <h2
+      class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+    >
+     Gestion de projet
+    </h2>
+    <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
+       
+ 
+        <form method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {% bootstrap_form gerer_demande show_help=False %}
+            <br>
+            <br>
+            {% buttons %}
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+            {% endbuttons %}
+        
+
+            
+
+
+
+
+              
+        </form>
+
+
+
+     </div>
+   
+    
+  </div>
+
+  <script>
+    function changecolor() {
+      var element= document.getElementById("moi");
+      element.style.backgroundColor="green";
+    }
+    </script>
+
+<!-- Modal backdrop. This what you want to place close to the closing body tag -->
+
+  
+
+  {% endblock content %}

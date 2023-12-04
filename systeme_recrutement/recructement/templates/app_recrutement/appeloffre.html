@@ -1,0 +1,92 @@
+{% extends 'app_recrutement/baseA.html' %} 
+{% load static %}
+{% block content%}
+
+
+<div class="slider-area ">
+    <div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
+    <div class="container">
+    <div class="row">
+    <div class="col-xl-12">
+    <div class="hero-cap pt-100">
+    <h2> Architecte trouver Les appels d'offres ici</h2>
+    <h3> </h3>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<section class="project-area ">
+    <div class="container">
+
+
+
+      {% if demandes %}
+
+
+
+
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Demandeur</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Date de demande</th>
+                <th scope="col">Echéance</th>
+                <th scope="col">Cahier de charges</th>
+                <th scope="col"></th>
+
+              </tr>
+            </thead>
+            <tbody>
+
+                {% for demandes in demandes %}
+              <tr>
+                <th scope="row">{{ demandes.client }}</th>
+                <td>{{ demandes.genre }}</td>
+                <td>{{ demandes.date_publication }}</td> 
+                <td>{{ demandes.date_limite }}</td>
+                <td> <a href="{{ demandes.cahier_charge.url }}" target="_blank">Voir le cahier de charges</a></td>
+
+                
+                 
+                {% if user.is_authenticated %}
+
+
+                <a  href="{% url 'tableaubord' %}">
+                <td>
+                  
+                  <a  href="{% url 'tableaubord' %}"><button type="button" class="btn btn-dark">Postuler
+                  </button>
+                </a></td>
+                
+                {% else %}
+                <td>
+                  <a href="{% url 'signin' %}" >
+                  <button type="button" class="btn btn-dark">Postuler
+                  
+                  <a></button>
+                
+                </td>
+                {% endif %}
+
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <br>
+          <br>
+          <h1>Aucun appel d'offre pour l'instant</h1>
+
+          <br>
+          <br>
+          {% endif %}
+
+    </div>
+</section>
+
+
+{% endblock content %}
